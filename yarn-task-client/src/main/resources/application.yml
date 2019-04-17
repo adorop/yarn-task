@@ -1,0 +1,16 @@
+spring:
+    yarn:
+        appName: yarn-task
+        client:
+            files:
+              - "file:yarn-task-appmaster/target/yarn-task-appmaster-1.0.jar"
+              - "file:yarn-task-container/target/yarn-task-container-1.0.jar"
+            launchcontext:
+                archiveFile: yarn-task-appmaster-1.0.jar
+            localizer:
+                patterns:
+                - "*appmaster*.jar"
+        appmaster:
+            appmasterClass: "com.aliaksei.darapiyevich.yarntask.engine.appmaster.ApplicationMaster"
+            launchcontext:
+                archiveFile: yarn-task-container-1.0.jar
